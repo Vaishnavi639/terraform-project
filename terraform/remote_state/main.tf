@@ -9,7 +9,7 @@ resource "aws_s3_bucket" "example" {
   bucket = "remote-storage-terraform"
 
   tags = {
-    Name        = "remote-storage-terraform"
+    Name        = "vaish-remote-storage-terraform"
     Environment = "Production"
     Project     = "RemoteStorage"
   }
