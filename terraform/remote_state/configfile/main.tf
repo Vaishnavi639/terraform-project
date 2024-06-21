@@ -1,6 +1,6 @@
 provider "aws" {
-  region = "ap-south-1" 
-} 
+  region = "ap-south-1"
+}
 
 ####################Create S3 Bucket################################
 
@@ -27,7 +27,7 @@ resource "aws_dynamodb_table" "lock_table" {
 
   attribute {
     name = "LockID"
-    type = "S"  
+    type = "S"
   }
 
   tags = {
@@ -35,19 +35,4 @@ resource "aws_dynamodb_table" "lock_table" {
     Project     = "RemoteStorage"
   }
 }
-
-
-####################Configuration with Backend[remote storage]#####
-terraform {
-  backend "s3" {
-    bucket         = "vaish-remote-storage-terraform"
-    key            = "ec2-instance/terraform.tfstate"
-    region         = "ap-south-1"
-    dynamodb_table = "remote_storage_locks"
-    encrypt        = true
-  }
-}
-
-
-  
 
