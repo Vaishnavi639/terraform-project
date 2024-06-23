@@ -22,3 +22,4 @@ output "dynamodb_table_arn" {
   value       = aws_dynamodb_table.terraform_lock.arn
   description = "The ARN of the DynamoDB table"
 }
+
